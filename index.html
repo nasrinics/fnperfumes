@@ -1,0 +1,655 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+ <head>
+  <meta charset="UTF‑8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FN — Luxury Perfumes</title>
+
+ 
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Your navbar code here -->
+
+<!-- Bootstrap Bundle with Popper (needed for toggle) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+
+
+  <style>
+    html{
+      scroll-behavior: smooth;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Playfair Display', serif; color: #f5eded; 
+      background-image: url('77.jpg');
+      background-repeat:no-repeat;
+      background-size:cover;
+      scroll-behavior: smooth;
+
+      }
+   nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between; /* Separate left & right sides */
+  align-items: center;
+  background: rgba(0, 0, 0, 0); /* Fully transparent background */
+  z-index: 100;
+  font-family: 'Playfair Display', serif;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+}
+
+.nav-right a:hover {
+  color: #f0e6d2;
+}
+
+    .hero {
+      height: 100vh; background: url('fn-hero.jpg') center/cover no-repeat;
+      display: flex; flex-direction: column; justify-content: center;
+      align-items: center; text-align: center; position: relative;
+      color: white;
+      background-image: url(258.jpg);
+    }
+    .hero h1 { font-size: 4rem; text-shadow: 0 0 10px rgba(0,0,0,0.6); }
+    .hero p { font-size: 1.5rem; max-width: 600px; margin-top: 1rem; }
+
+    section {
+      padding: 4rem 2rem; max-width: 1200px; margin: auto;
+    }
+
+    .story {
+      display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;
+    }
+    .story img {
+      width: 100%; max-width: 500px; border-radius: 10px;
+    }
+    .story div { flex: 1; }
+
+    .products {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .product {
+      position: relative; border-radius: 10px; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product:hover {
+      transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .product img { width: 100%; height: 350px; object-fit: cover; }
+    .product-name {
+      position: absolute; bottom: 20px; left: 20px;
+      background: rgba(255,255,255,0.8); padding: 0.5rem 1rem;
+      font-weight: 600; border-radius: 5px;
+    }
+
+    .testimonial {
+      background: #f9f9f7; padding: 3rem 2rem; text-align: center;
+      font-style: italic;
+    }
+    .testimonial span { display: block; margin-top: 1rem; font-weight: bold; }
+
+    footer {
+      background: #222; color: #ddd; text-align: center;
+      padding: 2rem; margin-top: 2rem;
+    }
+    .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+ .logo-link {
+  display: inline-block;
+  text-decoration: none; 
+  color: white; /* changed from gold to white */
+  font-size: 30px; 
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  width: 70px;
+  height: 70px;
+  border: 3px solid white; /* changed from gold to white */
+  border-radius: 50%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s, color 0.3s, border-color 0.3s;
+  text-decoration: none; 
+}
+
+.logo-link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px white, 0 0 30px white; /* white glow on hover */
+  color: white;
+  border-color: white;
+  text-decoration: none;
+}
+
+.carousel-caption-custom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 2rem 3rem;
+  border-radius: 10px;
+}
+
+.carousel-caption-custom h1 {
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.carousel-caption-custom p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/*modal*/
+  .custom-modal-size {
+  max-width: 90%; /* Adjust width */
+}
+
+.custom-modal-size .modal-content {
+  height: 240vh;    /* Adjust height */
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal-title h5{
+  text-align: center;
+}
+
+  .custom-modal-header {
+    background-color: #000;
+  }
+
+  .custom-modal-header .modal-title {
+    color: white;
+    font-size: 1.75rem; 
+    font-family: 'Georgia', serif;
+  }
+
+ 
+  .custom-modal-header .btn-close {
+    filter: brightness(0) invert(1); 
+  }
+  .carousel-container {
+      max-width: 1000px;
+      margin: 50px auto;
+      height: 500px;
+    }
+
+    .carousel-item video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .contact-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 15px;
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+  color: white;
+}
+
+.contact-card {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.contact-card label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.contact-card input,
+.contact-card textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+.contact-card input::placeholder,
+.contact-card textarea::placeholder {
+  color: #ccc;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+  box-shadow: 0 0 5px #f0e6d2;
+}
+.oc{
+  color: white;
+}
+#head{
+  color: white;
+}
+ /* Ensure navbar toggler works well on dark background */
+.navbar-toggler {
+  border-color: white;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 768px) {
+  .carousel-caption-custom {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .carousel-caption-custom h1 {
+    font-size: 2rem;
+  }
+
+  .carousel-caption-custom p {
+    font-size: 1rem;
+  }
+
+  .product img {
+    height: 250px;
+  }
+
+  .modal-content {
+    height: auto !important;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand logo-link" href="#">FN</a>
+    
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#demo">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="aboutex.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#story">Our Story</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#testimonials">Terminator</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="signup.html">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+ 
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+   <li data-bs-target="#demo" data-bs-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <div class="carousel-inner">
+    <!-- Text Overlay -->
+<div class="carousel-caption-custom">
+  <h1 data-aos="zoom-in" data-aos-delay="100">FN perfums</h1>
+  <p data-aos="zoom-in" data-aos-delay="300">FN Perfumes — Crafted Elegance in Every Bottle</p>
+  <button type="button" class="btn btn-dark" data-aos="zoom-in" data-aos-delay="500" data-bs-toggle="modal" data-bs-target="#myModal">
+    Launch Modal
+  </button>
+</div>
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg custom-modal-size">
+    <div class="modal-content">
+    
+      <!-- Modal Header -->
+    <div class="modal-header justify-content-center position-relative custom-modal-header">
+  <h5 class="modal-title text-center">Special Collections</h5>
+  <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+      
+      <!-- Modal Body -->
+      <div class="modal-body" >
+       <section id="products" class="products" style="color:black;">
+    <div class="product" >
+      <img src="athar1.jpg" alt="FN No. 1">
+      <div class="product-name">$ 599</div>
+    </div>
+    <div class="product" style="color:black;">
+      <img src="athar2.jpg" alt="FN Bloom">
+      <div class="product-name">$ 399</div>
+    </div>
+    <div class="product" style="color:black;">
+      <img src="pn1.jpg" alt="FN Midnight">
+      <div class="product-name">$ 893</div>
+    </div>
+    <div class="product" style="color:black;">
+      <img src="pn2.jpg" alt="FN Eternal">
+      <div class="product-name">$ 999</div>
+    </div>
+  </section>
+  <section id="products" class="products">
+    <div class="product" style="color:black;">
+      <img src="pn3.jpg" alt="FN No. 1">
+      <div class="product-name">$ 699</div>
+    </div>
+    <div class="product" style="color:black;">
+      <img src="pn4.jpg" alt="FN Bloom">
+      <div class="product-name">$ 499</div>
+    </div>
+    <div class="product"style="color:black;">
+      <img src="pn5.jpg" alt="FN Midnight">
+      <div class="product-name">$ 999</div>
+    </div>
+    <div class="product" style="color:black;">
+      <img src="pn6.jpg" alt="FN Eternal">
+      <div class="product-name">$ 799</div>
+    </div>
+  </section><section id="products" class="products">
+    <div class="product" style="color:black;">
+      <img src="pn7.jpg" alt="FN No. 1">
+      <div class="product-name">$ 766</div>
+    </div>
+    <div class="product" style="color:black;">
+      <img src="pn8.jpg" alt="FN Bloom">
+      <div class="product-name">$ 499</div>
+    </div>
+    <div class="product" style="color:black;">
+      <img src="pn9.jpg" alt="FN Midnight">
+      <div class="product-name">$ 599</div>
+    </div>
+    <div class="product" style="color:black;">
+      <img src="pn10.jpg" alt="FN Eternal">
+      <div class="product-name">$ 799</div>
+    </div>
+  </section>
+
+      </div>
+      
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    
+    </div>
+  </div>
+</div>
+ 
+
+    <div class="carousel-item active">
+      <img src="75.jpg" alt="Los Angeles" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="girl.2.jpg" alt="Chicago" width="1100" height="500">
+      
+    </div>
+    <div class="carousel-item">
+      <img src="home.jpg" alt="New York" width="333" height="-5">
+    </div>
+  </div>
+  
+
+  <a class="carousel-control-prev" href="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+  <section id="story" class="story"data-aos="fade-up" >
+    <img src="os.jpg" alt="Artisan crafting the fragrance">
+    <div class="oc">
+      <h2>Our Story</h2>
+      <p>At FN, tradition meets innovation. We craft scents that are more than fragrances—they’re experiences rooted in heritage and elevated by modern elegance.Noorson provides you the best Attar, Bakhoor, Oud, Oils, cosmetics and perfumes online.
+
+At Noorson, we provide 100% pure attar by blending the best complimenting notes.
+
+By touching the hearts of customers we also introduce many useful sections like discount, low rate, clearance sale, combo sale etc with the trusted and friendlier online shopping experience we are using a trusted payment gateway as cash on delivery, today's fast running world we people don't have much time to spend for shopping outside this is one of the best virtual place to buy like their interest people can search compare and choose the local shops.
+
+Qualified experts make all our product with in in depth knowledge of fragrance procedures and measures.
+
+Noorson is authentic, and it bring most popular and well-liked Attar's to the market with best and highest quality material to make our product.
+
+Website accessible through mobile also so your shopping will be easy fast and quickly we are also accepting tele-orders and our expert team will guide you to choose from our collection we assure you that you will get the best value for your money without compromising quality of the products as we are aware of the market and our customer's taste. 
+       
+      </p>
+    </div>
+  </section>
+
+  <section id="products" class="products"  data-aos="zoom-in" data-aos-delay="50" style="color:black;">
+    <div class="product" >
+      <img src="222.gif" alt="FN No. 1">
+      <div class="product-name">FN No. 1</div>
+    </div>
+    <div class="product">
+      <img src="gif.gif" alt="FN Bloom">
+      <div class="product-name">FN Bloom</div>
+    </div>
+    <div class="product">
+      <img src="gf3.gif" alt="FN Midnight">
+      <div class="product-name">FN Midnight</div>
+    </div>
+    <div class="product">
+      <img src="g5.gif" alt="FN Eternal">
+      <div class="product-name">FN Eternal</div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+   <div class="carousel-container">
+  <h3 class="text-center mb-4 "id="head">Customer Video Feedback</h3>
+
+ 
+  <div id="videoFeedbackCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+
+      <div class="carousel-item active"data-aos="fade-up">
+        <video controls autoplay muted>
+          <source src="mp6.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="carousel-caption">
+          <p>"Absolutely love the fragrance!" — Sarah</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+       <video controls autoplay muted>
+  <source src="vd5.mp4" type="video/mp4">
+  
+</video>
+        <div class="carousel-caption">
+          <p>"Elegant and long-lasting — amazing!" — maya</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <video controls autoplay muted>
+          <source src="vd7.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="carousel-caption">
+          <p>"My go-to perfume now. Thank you FN!" — Ayesha</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#videoFeedbackCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#videoFeedbackCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</section>
+  <section id="contact" class="contact-section" data-aos="fade-up">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        <div class="contact-card p-5 shadow-lg">
+          <h2 class="text-center mb-4" style="font-family: 'Playfair Display', serif;">Get in Touch</h2>
+          <p class="text-center mb-4">We’d love to hear from you. Whether you have a question about our perfumes, need assistance, or just want to say hello.</p>
+          <form action="formm.html" method="POST">
+            <div class="form-group mb-3">
+              <label for="name">Your Name</label>
+              <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="email">Email Address</label>
+              <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="subject">Subject</label>
+              <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject (optional)">
+            </div>
+
+            <div class="form-group mb-4">
+              <label for="message">Message</label>
+              <textarea name="message" id="message" rows="5" class="form-control" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-light px-5 py-2">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer style="text-align: center; padding: 20px; background-color: white; color: black;">
+  &copy; 2025 FN Luxury Perfumes. Crafted with elegance.
+  <br><br>
+  <a href="https://www.facebook.com/YourPage" target="_blank">
+    <img src="fb3.jpg" alt="Facebook" style="width:24px; margin: 0 10px;">
+  </a>
+  <a href="https://www.instagram.com/YourPage" target="_blank">
+    <img src="insta.jpg" alt="Instagram" style="width:24px; margin: 0 10px;">
+  </a>
+  <a href="https://wa.me/YourNumber" target="_blank">
+    <img src="wp.jpg" alt="WhatsApp" style="width:24px; margin: 0 10px;">
+  </a>
+</footer>
+
+  <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation duration in ms
+    once: true      // only animate once
+  });
+
+
+</script>
+<script>
+  const navLinks = document.getElementById('navbarNav');
+  const hamburger = document.querySelector('.navbar-toggler');
+
+  document.addEventListener('click', function (event) {
+    if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+      const bsCollapse = new bootstrap.Collapse(navLinks, {toggle:false});
+      bsCollapse.hide();    // programmatically close it
+    }
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbarCollapse = document.getElementById("navbarNav");
+    const navLinks      = navbarCollapse.querySelectorAll(".nav-link");
+
+    // Close the navbar after clicking any nav link
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+        bsCollapse.hide();
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
